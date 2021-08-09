@@ -93,12 +93,12 @@ async function newsSearch(){
  
 
     let{data}=data1;
-    console.log(data);
+    //console.log(data);
    data.forEach(({title,description}) => {
        var div=document.createElement('div');
        div.innerHTML=`<h3>${title}</h3><br><p>${description}</p>`
        div.setAttribute("style","background-color:wheat")
-       console.log(title);
+       // console.log(title);
        content_div.appendChild(div);
    });
 }
