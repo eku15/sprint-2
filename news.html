@@ -5,15 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News</title>
+     <style>
+      body{
+          height: 100vh;
+          width: 100vw;
+      }
+
+      .header{
+          height: 10%;
+          width: 100%;
+          background-color: brown;
+          display: flex;
+          justify-content: center;
+      }
+      .left{
+          width:18%;
+          height:60%;
+          background-color: aqua;
+          font-size: 20px;
+          font-weight: 800;
+          
+      }
+      button {
+          background-color: rgb(5, 5, 43);
+          color:white;
+      }
+      #content{
+          height:60%;
+          width:82% ;
+          background-color: burlywood;
+  
+      }
+      #sp1{
+       
+        height:70%;
+        width:100%;
+        display: flex;
+
+      }
+
+     </style>
 </head>
 <body>
-   <div>
-  <input type ="text" id="search">
-  <button onclick="newsSearch()">search</button>
-  </div>
-  <div id="content">
 
+  <div class="header">
+   <img src="https://s0.2mdn.net/8148485/07132021-225405632-AnthemTalent_320x50.jpg"/>   
   </div>
+  <div id="sp1">
+  <div class="left">
+  <input type ="text" id="search">
+  <button onclick="newsSearch()">search</button>  
+  <a>   
+  <p>
+     Disrupt 
+  </p> 
+  <p>
+    Startups 
+  </p> 
+    <p>
+   Advertise 
+  </p> 
+    <p>
+    Extra Crunch 
+  </p> 
+    <p>
+   Videos
+  </p> 
+  </a> 
+ </div>
+ <div id="content">
+ </div>
+</div>
+
+
+
+
+
+
+
     
 </body>
 </html>
@@ -30,13 +99,11 @@ async function newsSearch(){
  
 
     let{data}=data1;
-   // console.log(data);
-   data.forEach(({title})=>{
+   data.forEach(({title,description})=>{
        var div=document.createElement('div');
-       content_div.innerHTML=title
-        content_div.appendChild(div);
+       content_div.innerHTML=`<h3>${title}</h3><br><p>${description}</p>`
+       content_div.appendChild(div);
    });
-
 }
 
 
