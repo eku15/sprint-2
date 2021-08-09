@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+</head>
+<body>
+  <input type ="text" id="search">
+  <button onclick="newsSearch()">search</button>
+    
+</body>
+</html>
+
+<script>
+
+async function newsSearch(){
+
+    var search = document.getElementById("search").value;
+    let response = await fetch(`http://api.mediastack.com/v1/news?keywords=virus&access_key=39a2231c14adf5d53ae57b1188fc8c70`) 
+    let data =await response.json();
+    console.log("data:",data);
+
+
+
+
+
+
+
+}
+
+
+
+</script>
